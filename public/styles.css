@@ -1,0 +1,102 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+canvas {
+    border: 1px solid #ccc;
+}
+.toolbar {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 10px;
+    display: flex;
+    gap: 8px;
+}
+.btn {
+    background-color: #007BFF;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+.btn:hover {
+    background-color: #0056b3;
+}
+.text-input, .color-picker {
+    border: 2px solid #ccc;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 16px;
+}
+.background-selector {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+}
+.bg-option {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #ccc;
+    background-size: cover;
+    cursor: pointer;
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+.bg-option:hover {
+    transform: scale(1.1);
+    border-color: #007BFF;
+}
+
+
+#stats {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#theme-section h3 {
+    margin: 0;
+    padding: 4px;
+    background: #007bff;
+    color: white;
+    text-align: center;
+}
+
+.background-selector {
+    position: absolute;
+    top: 50px; /* Adjust based on actual layout */
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bg-option {
+    width: 60px;
+    height: 60px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    background-size: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.bg-option:hover {
+    transform: scale(1.1);
+}

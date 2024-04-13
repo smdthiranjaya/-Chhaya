@@ -1,0 +1,11 @@
+function downloadCanvas() {
+    var link = document.createElement('a');
+    link.download = 'custom-image.png';
+    link.href = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream');
+    link.click();
+
+    // Increment and update download count
+    downloadCount++;
+    localStorage.setItem('downloadCount', downloadCount);
+    document.getElementById('downloadCount').textContent = downloadCount;
+}
