@@ -10,28 +10,35 @@ canvas {
     border: 1px solid #ccc;
 }
 .toolbar {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    position: fixed; /* Stick to the bottom or top of the screen */
+    bottom: 0; /* Adjust based on preference: top or bottom */
+    left: 0;
+    right: 0;
+    background: #333; /* Darker background for contrast */
+    color: white;
+    border-radius: 0; /* Full width, no rounded corners at the screen edge */
     padding: 10px;
     display: flex;
-    gap: 8px;
+    justify-content: space-around; /* Space items evenly */
+    flex-wrap: nowrap; /* Prevent wrapping */
+    z-index: 1000; /* Ensure it's above other content */
 }
 .btn {
     background-color: #007BFF;
     border: none;
-    padding: 8px 16px;
+    padding: 10px;
+    min-width: 40px;
     border-radius: 4px;
     color: white;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 14px;
     transition: background-color 0.3s ease;
 }
 .btn:hover {
     background-color: #0056b3;
+}
+.btn i { /* Assuming you use icons like FontAwesome */
+    margin-right: 5px; /* Space between icon and text */
 }
 .text-input, .color-picker {
     border: 2px solid #ccc;
@@ -99,4 +106,57 @@ canvas {
 
 .bg-option:hover {
     transform: scale(1.1);
+}
+
+
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    flex-direction: column; /* Stacks elements vertically on small screens */
+}
+
+canvas {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+}
+
+.toolbar, .background-selector {
+    flex-wrap: wrap; /* Allows toolbar items to wrap on smaller screens */
+}
+
+.btn, .text-input, .color-picker {
+    font-size: 14px; /* Smaller font size for mobile */
+}
+
+.background-selector {
+    flex-direction: column;
+}
+
+.bg-option {
+    width: 40px; /* Smaller background options */
+    height: 40px;
+}
+
+@media (max-width: 600px) {
+    .toolbar {
+        position: static; /* Ensures toolbar does not use absolute positioning */
+        order: 1; /* Makes sure toolbar is placed after the canvas or other elements */
+        margin-top: 10px; /* Adds some space between the canvas and the toolbar */
+        padding: 5px;
+        width: 95%; /* Adjust width to fit smaller screens while allowing some margin */
+    }
+    .btn {
+        font-size: 12px; /* Slightly smaller to fit more items */
+        padding: 8px;
+    }
+    canvas {
+        width: 95%; /* Adjust canvas size to prevent overflow */
+        height: auto; /* Maintains aspect ratio */
+        margin-top: 20px; /* Space above the canvas */
+    }
 }

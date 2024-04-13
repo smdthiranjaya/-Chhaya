@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Advanced Image Editor</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
     <div id="stats">
@@ -22,8 +23,8 @@
         <div class="color-indicator" id="color-indicator"></div>
         <input type="color" id="text-color" class="color-picker" onchange="changeColor()">
         <button class="btn" onclick="addOrUpdateText()">Add/Update Text</button>
-        <button class="btn" onclick="toggleBold()">Bold</button>
-        <button class="btn" onclick="toggleItalic()">Italic</button>
+        <button class="btn"><i class="fas fa-bold"></i> Bold</button>
+        <button class="btn"><i class="fas fa-italic"></i> Italic</button>        
         <button class="btn" onclick="alignText('left')">Left</button>
         <button class="btn" onclick="alignText('center')">Center</button>
         <button class="btn" onclick="alignText('right')">Right</button>

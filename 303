@@ -1,11 +1,31 @@
-function downloadCanvas() {
-    var link = document.createElement('a');
-    link.download = 'custom-image.png';
-    link.href = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream');
-    link.click();
+.toolbar {
+    position: fixed; /* Fixed positioning to stay visible */
+    top: 0; /* Start from the top */
+    bottom: 0; /* Extend to the bottom */
+    left: 0; /* Align to the left side of the viewport */
+    width: 60px; /* Fixed width for the toolbar */
+    background: #333; /* Dark background for better visibility */
+    color: white;
+    border-radius: 0; /* No border-radius on the sides touching screen edges */
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center-align the items */
+    padding: 10px 5px; /* Padding inside the toolbar */
+    z-index: 1000; /* Make sure it's above other content */
+    overflow-y: auto; /* Allows scrolling if the content is taller than the screen */
+}
 
-    // Increment and update download count
-    downloadCount++;
-    localStorage.setItem('downloadCount', downloadCount);
-    document.getElementById('downloadCount').textContent = downloadCount;
+.btn {
+    width: 100%; /* Full width to fill the toolbar */
+    margin: 5px 0; /* Space between buttons */
+    text-align: center; /* Center text in buttons */
+}
+
+@media (max-width: 768px) {
+    .toolbar {
+        width: 50px; /* Slightly narrower on smaller screens */
+    }
+    .btn {
+        padding: 8px 0; /* Adjust padding for smaller screens */
+    }
 }
