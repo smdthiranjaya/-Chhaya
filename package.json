@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"No tests to run.\"",
     "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
   },
   "author": "",
   "license": "ISC"
 }
-
